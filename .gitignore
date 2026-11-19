@@ -1,0 +1,48 @@
+# Byte-compiled & C extensions
+__pycache__/
+*.py[codz]
+*$py.class
+*.so
+
+# Distribution, packaging & eggs
+build/
+dist/
+outputs/
+uploads/
+*.egg-info/
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Environment variables & secrets
+.env.*
+*.local
+
+# Testing, coverage & caching
+htmlcov/
+.tox/
+.coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter Notebook & Editors
+.ipynb_checkpoints
+.vscode/
+.idea/
+*.swp
+
+# OS generated files & Databases
+.DS_Store
+Thumbs.db
+db.sqlite3
+*.log
+
+# Sphinx documentation
+docs/_build/
