@@ -4,3 +4,4 @@ uvicorn[standard]
 python-multipart
 faster-whisper
 av<19
+opencv-python
