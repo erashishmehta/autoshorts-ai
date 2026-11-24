@@ -4,12 +4,7 @@ from pathlib import Path
 
 from app.services.face_tracker import detect_face_crop_x
 from app.utils.ffmpeg import FFMPEG_BIN, run_command
-
-
-def report(message, progress_callback=None):
-    print(f"[AutoShorts] {message}", flush=True)
-    if progress_callback:
-        progress_callback(message)
+from app.utils.helpers import report
 
 
 def generate_video(

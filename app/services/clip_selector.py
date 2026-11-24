@@ -2,6 +2,7 @@ import re
 import traceback
 
 from app.config import CLIP_LENGTH, MAX_CLIPS
+from app.utils.helpers import report
 from app.services.ai_selector import select_clips_with_ai
 
 # Number of transcript candidates sent to Ollama.
@@ -9,12 +10,6 @@ AI_CANDIDATE_LIMIT = 20
 
 # Prevent adjacent/overlapping clips from being selected.
 MIN_CLIP_GAP_SECONDS = 0.0
-
-
-def report(message, progress_callback=None):
-    print(f"[AutoShorts] {message}", flush=True)
-    if progress_callback:
-        progress_callback(message)
 
 
 # =====================================================
@@ -282,5 +277,3 @@ def find_best_clips(segments, duration, progress_callback=None):
     )
 
     return selected_clips
-
-

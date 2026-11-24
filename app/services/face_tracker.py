@@ -2,14 +2,9 @@ from pathlib import Path
 
 import cv2
 
+from app.utils.helpers import report as _report
 
 _face_cascade = None
-
-
-def _report(message, progress_callback=None):
-    print(f"[AutoShorts] {message}", flush=True)
-    if progress_callback:
-        progress_callback(message)
 
 
 def get_face_cascade():
@@ -46,7 +41,9 @@ def detect_face_crop_x(video_path, clip, progress_callback=None):
     capture = cv2.VideoCapture(str(video_path))
 
     if not capture.isOpened():
-        _report("OpenCV could not open the video; using centre crop.", progress_callback)
+        _report(
+            "OpenCV could not open the video; using centre crop.", progress_callback
+        )
         return None
 
     try:

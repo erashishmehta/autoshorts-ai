@@ -5,6 +5,8 @@ from pathlib import Path
 
 from faster_whisper import WhisperModel
 
+from app.utils.helpers import report as _report
+
 from app.config import (
     WHISPER_MODEL,
     WHISPER_DEVICE,
@@ -14,13 +16,6 @@ from app.config import (
 )
 
 _whisper_model = None
-
-
-def _report(message, progress_callback=None):
-    """Print a processing message and forward it to the optional callback."""
-    print(f"[AutoShorts] {message}", flush=True)
-    if progress_callback:
-        progress_callback(message)
 
 
 def load_whisper():

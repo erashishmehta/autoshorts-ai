@@ -4,6 +4,7 @@ from pathlib import Path
 
 
 from app.services.transcription import get_whisper_model, transcribe_audio
+from app.utils.helpers import report
 from app.services.clip_selector import find_best_clips
 from app.services.face_tracker import detect_face_crop_x
 from app.services.subtitle_generator import create_srt
@@ -15,17 +16,6 @@ from app.utils.ffmpeg import (
     has_audio_stream,
     run_command,
 )
-
-# =====================================================
-# PROGRESS REPORTING
-# =====================================================
-
-
-def report(message, progress_callback=None):
-    print(f"[AutoShorts] {message}", flush=True)
-    if progress_callback:
-        progress_callback(message)
-
 
 # =====================================================
 # EXTRACT AUDIO
